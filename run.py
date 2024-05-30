@@ -18,11 +18,32 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('MR - Project 3')
 
-results_sheet = SHEET.worksheet('results')
+score_sheet = SHEET.worksheet('results')
 
-data = results_sheet.get_all_values()
+data = score_sheet.get_all_values()
 
 print(data)
+
+def get_score():
+    global score
+    score = int(input("Enter a score"))
+    print(score)
+
+get_score()
+
+def update_score_sheet():
+    sheet.update_cell(4,4,"hello")
+
+
+update_score_sheet()
+
+
+
+# def update_score_sheet(new_score, worksheet):
+#     """
+#     Updates scoresheet based on result of game
+#     """
+
 
 # Defining the user's board and the Computer's board
 
