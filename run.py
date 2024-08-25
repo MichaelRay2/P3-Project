@@ -32,7 +32,7 @@ def get_score():
 get_score()
 
 def update_score_sheet():
-    sheet.update_cell(4,4,"hello")
+    score_sheet.update_cell(3,1,score)
 
 
 update_score_sheet()
